@@ -1,0 +1,17 @@
+{% include 'base/main.html' %}
+
+{% block content %}
+
+    <div class="testDiv">
+        <h1>Welcome!</h1>
+        <p class="whiteColor">{{ message }}</p>
+    </div>
+
+{% endblock %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        testRed();
+        writeWhite();
+    });
+</script>

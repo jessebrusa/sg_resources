@@ -3,8 +3,8 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
-class HelloWorldView(TemplateView):
-    template_name = "base/main.html"
+class LandingPageView(TemplateView):
+    template_name = "base/landing.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
