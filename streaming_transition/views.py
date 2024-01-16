@@ -9,14 +9,12 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views import View
 
 
-# Create your views here.
-
 class LandingPageView(LoginRequiredMixin, TemplateView):
     template_name = "base/landing-page.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['message'] = 'Hello, World!'
+        context['username'] = self.request.user.username
         return context
     
 
