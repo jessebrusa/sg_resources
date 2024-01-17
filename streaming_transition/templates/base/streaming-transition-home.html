@@ -2,16 +2,31 @@
 
 {% block content %}
 
-    <div class="testDiv">
-        <h1>Welcome!</h1>
-        <p class="whiteColor">{{ username }}</p>
+    <div class="dashboardContainer">
+        <h1>Welcome! {{ username }}</h1>
+        <p>SELCO Stream Transition Progress: {{ percent_completed }}%</p>
+        <div class="progressBar">
+            <div style="width: {{ percent_completed }}%;" class="progressFill"></div>
+        </div>
+    </div>
+
+    <div class="linkContainer">
+        <div class="row1">
+            <a href="#" class="btnLink">Uncompleted</a>
+            <a href="#" class="btnLink">completed</a>
+        </div>
+        <div class="row2">
+            <a href="#" class="btnLink">Comments</a>
+            <a href="#" class="btnLink">Recommendations</a>
+        </div>
+        <div class="row3">
+            <a href="#" class="btnLink">Schedule Visit</a>
+        </div>
     </div>
 
 {% endblock %}
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        testRed();
-        writeWhite();
     });
 </script>

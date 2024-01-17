@@ -1,12 +1,96 @@
-body {
-    background-color: purple;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.testDiv {
+body {
+    background-color: rgb(112, 18, 68);
+}
+
+.btnLink {
+    background-color: lightcoral;
+    border: 2px solid darkmagenta;
+    width: 250px;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    margin: 1rem;
+    box-shadow: -10px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+.btnLink:hover {
+    cursor: pointer;
+    transform: translate(10px, -5px);
+    box-shadow: -25px 10px 25px 0px rgba(0, 0, 0, 0.6);
+}
+
+.linkContainer {
+    width: 60%;
+    min-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkContainer div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.linkContainer div a {
+    text-decoration: none;
+    color: black;
+}
+
+.dashboardContainer {
+    background-color: beige;
+    border: 10px solid darkmagenta;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    margin: 50px;
+    margin: 1rem;
+    gap: .5rem;
+    min-width: 300px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dashboardContainer h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.dashboardContainer p {
+    text-align: center;
+}
+
+.dashboardContainer .progressBar {
+    width: 50%;
+    border: 5px solid brown;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboardContainer .progressBar .progressFill {
+    height: 100%;
+    background-color: green;
 }
