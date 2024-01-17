@@ -1,9 +1,11 @@
 from django.db import models
 
+
 class Apartment(models.Model):
-    apartment_number = models.AutoField(primary_key=True)
+    apartment_number = models.IntegerField()
     building = models.CharField(max_length=255)
     comments = models.TextField(null=True, blank=True)
+    complete = models.BooleanField(default=False)
 
 
 class Device(models.Model):
