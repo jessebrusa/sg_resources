@@ -5,6 +5,7 @@ class Apartment(models.Model):
     apartment_number = models.IntegerField()
     building = models.CharField(max_length=255)
     complete = models.BooleanField(default=False)
+    date_completed = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.apartment_number} {self.building}"

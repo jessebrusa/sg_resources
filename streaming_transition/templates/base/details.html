@@ -1,0 +1,35 @@
+{% extends 'base/streaming-transition-main.html' %}
+
+{% block content %}
+<h1>Apartment Details</h1>
+
+<h2>Apartment ID: {{ apartment.id }}</h2>
+<p>Complete: {{ apartment.complete }}</p>
+<p>Date Completed: {{ apartment.date_completed }}</p>
+
+<h2>Devices</h2>
+<ul>
+    {% for device in devices %}
+    <li>
+        <p>Device ID: {{ device.id }}</p>
+        <p>Device Name: {{ device.name }}</p>
+        <!-- Add more device fields here -->
+    </li>
+    {% empty %}
+    <li>No devices found.</li>
+    {% endfor %}
+</ul>
+
+<h2>Visits</h2>
+<ul>
+    {% for visit in visits %}
+    <li>
+        <p>Visit ID: {{ visit.id }}</p>
+        <p>Visit Date: {{ visit.date }}</p>
+        <!-- Add more visit fields here -->
+    </li>
+    {% empty %}
+    <li>No visits found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

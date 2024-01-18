@@ -1,6 +1,14 @@
-{% include 'base/streaming-transition-main.html' %}
+{% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/streaming-transition-stylesheet.css' %}">
+    <title>Streaming Transition</title>
+</head>
+<body>
 
     <div class="dashboardContainer">
         <h1>Welcome! {{ username }}</h1>
@@ -13,7 +21,7 @@
     <div class="linkContainer">
         <div class="row1">
             <a href="{% url 'uncomplete' %}" class="btnLink">Uncompleted</a>
-            <a href="#" class="btnLink">completed</a>
+            <a href="{% url 'complete' %}" class="btnLink">completed</a>
         </div>
         <div class="row2">
             <a href="#" class="btnLink">Comments</a>
@@ -23,11 +31,17 @@
             <a href="#" class="btnLink">Upcoming Visits</a>
             <a href="#" class="btnLink">Schedule Visit</a>
         </div>
+        <div class="row4">
+            <form>
+                <input type="text" placeholder="Search Apt." name="search" class="searchBar">
+                <input type="submit" value="Search" class="searchBtn">
+            </form>
+        </div>
     </div>
 
-{% endblock %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        });
+    </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    });
-</script>
+</body>

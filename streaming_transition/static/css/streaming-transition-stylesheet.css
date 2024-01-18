@@ -15,7 +15,7 @@ body {
 .btnLink {
     background-color: lightcoral;
     border: 2px solid darkmagenta;
-    width: 250px;
+    width: 275px;
     text-align: center;
     padding: 10px 5px;
     border-radius: 10px;
@@ -34,6 +34,20 @@ body {
     transform: scale(1.05);
 }
 
+.btnBack {
+    margin-top: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    gap: .5rem;
+}
+
 .header {
     background-color: whitesmoke;
     display: flex;
@@ -44,6 +58,8 @@ body {
     margin: 1.25rem;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
+    border: 5px solid darkmagenta;
 }
 
 .header h1 {
@@ -53,7 +69,7 @@ body {
 }
 
 .linkContainer {
-    width: 60%;
+    width: 80%;
     min-height: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -128,6 +144,7 @@ table {
 table td, table th {
     border: 1px solid black;
     text-align: center;
+    padding: 5px;
 }
 
 table td:first-child, table th:first-child {
@@ -145,5 +162,4 @@ table td:first-child, table th:first-child {
     padding: 10px;
     text-align: center;
     color: whitesmoke;
-    -webkit-text-stroke: 2px solid black;
 }

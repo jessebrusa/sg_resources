@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="header">
-    <h1>Uncompleted Apartments</h1>
+    <h1>Completed Apartments</h1>
 </div>
 
 <div class="tableHeader">
@@ -14,9 +14,9 @@
     <thead>
         <tr>
             <th>Apt.</th>
-            <th>Schedule</th>
+            <th>Date Completed</th>
             <th>Details</th>
-            <th>Complete</th>
+            <th>Not Complete</th>
         </tr>
     </thead>
     <tbody>
@@ -24,14 +24,12 @@
         <tr>
             <td>{{ apartment.apartment_number }}</td>
             <td>
-                <button class="schedule-button" data-apartment-id="{{ apartment.id }}">
-                    Schedule
-                </button>
+                <p>{{ apartment.date_completed }}</p>
             </td>
             <td><a href="#">Details</a></td>
             <td>
-                <button class="complete-button" data-apartment-id="{{ apartment.id }}">
-                    Complete
+                <button class="not-complete-button" data-apartment-id="{{ apartment.id }}">
+                    Not Complete
                 </button>
             </td>
         </tr>
@@ -47,9 +45,9 @@
     <thead>
         <tr>
             <th>Apt.</th>
-            <th>Schedule</th>
+            <th>Date Completed</th>
             <th>Details</th>
-            <th>Complete</th>
+            <th>Not Complete</th>
         </tr>
     </thead>
     <tbody>
@@ -57,14 +55,12 @@
         <tr>
             <td>{{ apartment.apartment_number }}</td>
             <td>
-                <button class="schedule-button" data-apartment-id="{{ apartment.id }}">
-                    Schedule
-                </button>
+                <p>{{ apartment.date_completed }}</p>
             </td>
             <td><a href="#">Details</a></td>
             <td>
-                <button class="complete-button" data-apartment-id="{{ apartment.id }}">
-                    Complete
+                <button class="not-complete-button" data-apartment-id="{{ apartment.id }}">
+                    Not Complete
                 </button>
             </td>
         </tr>
@@ -78,11 +74,11 @@
     const csrf = "{{ csrf_token }}";
 
     window.onload = function() {
-        var buttons = document.querySelectorAll('.complete-button');
+        var buttons = document.querySelectorAll('.not-complete-button');
         buttons.forEach(function(button) {
             button.addEventListener('click', function() {
                 updateData(button, 
-                '/streaming-transition/complete-apartment-check/', 
+                '/streaming-transition/not-complete-apartment-check/', 
                 csrf);
             });
         });
