@@ -1,0 +1,59 @@
+{% include 'base/streaming-transition-main.html' %}
+
+{% block content %}
+
+<div class="header">
+    <h1>Uncompleted Apartments</h1>
+</div>
+
+<div class="tableHeader">
+    <h2>East Apartments</h2>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Apt.</th>
+            <th>Schedule</th>
+            <th>Complete</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for apartment in east_apartments %}
+        <tr>
+            <td>{{ apartment.apartment_number }}</td>
+            <td><a href="#">Schedule</a></td>
+            <td><a href="#">Complete</a></td>
+            <td><a href="#">Remove</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="tableHeader">
+    <h2>West Apartments</h2>
+</div> 
+
+<table>    
+    <thead>
+        <tr>
+            <th>Apt.</th>
+            <th>Schedule</th>
+            <th>Complete</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for apartment in west_apartments %}
+        <tr>
+            <td>{{ apartment.apartment_number }}</td>
+            <td><a href="#">Schedule</a></td>
+            <td><a href="#">Complete</a></td>
+            <td><a href="#">Remove</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

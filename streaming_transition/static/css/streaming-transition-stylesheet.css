@@ -34,6 +34,24 @@ body {
     transform: scale(1.05);
 }
 
+.header {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 350px;
+    width: 70%;
+    margin: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header h1 {
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+}
+
 .linkContainer {
     width: 60%;
     min-height: 200px;
@@ -97,4 +115,35 @@ body {
 .dashboardContainer .progressBar .progressFill {
     height: 100%;
     background-color: green;
+}
+
+table {
+    background-color: whitesmoke;
+    width: 90%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table td, table th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table td:first-child, table th:first-child {
+    width: 100px;
+}
+
+.tableHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableHeader h2 {
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+    color: whitesmoke;
+    -webkit-text-stroke: 2px solid black;
 }

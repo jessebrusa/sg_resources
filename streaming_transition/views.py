@@ -1,8 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from .models import Apartment
 
-class StreamingTransitionHomeView(TemplateView):  # replace with your actual view class name
+class StreamingTransitionHomeView(LoginRequiredMixin, TemplateView):  
     template_name = "base/streaming-transition-home.html"
 
     def get_context_data(self, **kwargs):
@@ -19,5 +19,21 @@ class StreamingTransitionHomeView(TemplateView):  # replace with your actual vie
             percent_completed = 0
 
         context['percent_completed'] = percent_completed
+
+        return context
+    
+
+class UncompleteView(LoginRequiredMixin, ListView):
+    model = Apartment
+    template_name = 'base/uncomplete.html' 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        east_apartments = Apartment.objects.filter(building='East').order_by('apartment_number')
+        west_apartments = Apartment.objects.filter(building='West').order_by('apartment_number')
+
+        context['east_apartments'] = east_apartments
+        context['west_apartments'] = west_apartments
 
         return context
