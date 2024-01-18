@@ -16,8 +16,8 @@ class Visit(models.Model):
     date = models.DateField()
     time = models.TimeField()
     technician = models.CharField(max_length=255)
-    comments = models.TextField(null=True, blank=True)
-    complete = models.BooleanField(default=False)
+    comment = models.TextField(null=True, blank=True)
+    complete = models.TimeField(max_length=255, null=True, blank=True, default=None)
 
     def __str__(self):
         return f"{self.apartment.apartment_number}{self.apartment.building[0]} - {self.date}"
@@ -30,8 +30,7 @@ class Device(models.Model):
     model = models.CharField(max_length=255)
     built_in = models.CharField(max_length=255, null=True, blank=True, default=None)
     smart_device = models.CharField(max_length=255, null=True, blank=True)
-    comments = models.TextField(null=True, blank=True)
-    reccomendation = models.TextField(null=True, blank=True)
+    recommendation = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.apartment.apartment_number}{self.apartment.building[0]} - {self.device_type}: {self.model}"

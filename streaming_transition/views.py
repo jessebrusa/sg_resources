@@ -34,7 +34,7 @@ class StreamingTransitionHomeView(LoginRequiredMixin, TemplateView):
         if search_query is not None:
             try:
                 apartment = Apartment.objects.get(apartment_number=search_query)
-                return redirect('apartment_detail', pk=apartment.id)
+                return redirect('apartment', pk=apartment.id)
             except Apartment.DoesNotExist:
                 messages.add_message(request, messages.INFO, 'No apartment found with that number.')
         return super().get(request, *args, **kwargs)

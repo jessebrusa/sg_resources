@@ -1,35 +1,61 @@
 {% extends 'base/streaming-transition-main.html' %}
 
 {% block content %}
-<h1>Apartment Details</h1>
 
-<h2>Apartment ID: {{ apartment.id }}</h2>
-<p>Complete: {{ apartment.complete }}</p>
-<p>Date Completed: {{ apartment.date_completed }}</p>
+<div class="header">
+    <h1>Apartment Details</h1>
+</div>
 
-<h2>Devices</h2>
-<ul>
+<div class="tableHeader">
+    <h2>{{ apartment.apartment_number }} {{ apartment.building }}</h2>
+</div>
+<ul class="detailContainer">
+    <li>
+        <p>Complete: {{ apartment.complete }}</p>
+        <p>Date Completed: {{ apartment.date_completed }}</p>
+    </li>
+</ul>
+
+<div class="tableHeader">
+    <h2>Devices</h2>
+</div>
+<ul class="detailContainer">
     {% for device in devices %}
     <li>
-        <p>Device ID: {{ device.id }}</p>
-        <p>Device Name: {{ device.name }}</p>
-        <!-- Add more device fields here -->
+        <p>{{ device.device_type }} - {{ device.model }}</p>
+        <p>Built In: {{ device.built_in }}</p>
+        <p>Smart Device: {{ device.smart_device }}</p>
+        {% if device.recommendation %}
+            <p>Recommendations:</p>
+            <p>{{ device.recommendation }}</p>
+        {% endif %}
     </li>
     {% empty %}
     <li>No devices found.</li>
     {% endfor %}
 </ul>
 
-<h2>Visits</h2>
-<ul>
+<div class="tableHeader">
+    <h2>Visits</h2>
+</div>
+<ul class="detailContainer">
     {% for visit in visits %}
     <li>
-        <p>Visit ID: {{ visit.id }}</p>
-        <p>Visit Date: {{ visit.date }}</p>
-        <!-- Add more visit fields here -->
+        <p>Visit Date: {{ visit.date }} | {{ visit.time }}</p>
+        <p>Technician: {{ visit.technician }}</p>
+        {% if visit.comment %}
+            <p>Comments:</p>
+            <p>{{ visit.comment }}</p>
+        {% endif %}
+        {% if visit.complete %}
+            <p>Completed: {{ visit.complete }}</p>
+        {% else %}
+            <p>Completed: False</p>
+        {% endif %}
     </li>
     {% empty %}
     <li>No visits found.</li>
     {% endfor %}
 </ul>
+<br>
 {% endblock %}
