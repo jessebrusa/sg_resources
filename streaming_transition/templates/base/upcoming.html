@@ -1,0 +1,51 @@
+{% include 'base/streaming-transition-main.html' %}
+
+{% block content %}
+    <div class="header">
+        <h1>Upcoming Visits</h1>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Apt.</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Complete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visit in object_list %}
+                <tr>
+                    <td>{{ visit.apartment.apartment_number }}</td>
+                    <td>{{ visit.date }}</td>
+                    <td>{{ visit.time }}</td>
+                    <td>
+                        <button class="complete-button" data-visit-id="{{ visit.id }}">
+                            Complete
+                        </button>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No upcoming visits.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+<script>
+    const csrf = "{{ csrf_token }}";
+
+    window.onload = function() {
+        var buttons = document.querySelectorAll('.complete-button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                updateData(button, 
+                '/streaming-transition/complete-visit-check/', 
+                csrf);
+            });
+        });
+    }
+</script>

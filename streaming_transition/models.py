@@ -17,7 +17,7 @@ class Visit(models.Model):
     time = models.TimeField()
     technician = models.CharField(max_length=255)
     comment = models.TextField(null=True, blank=True)
-    complete = models.TimeField(max_length=255, null=True, blank=True, default=None)
+    time_completed = models.TimeField(max_length=255, null=True, blank=True, default=None)
 
     def __str__(self):
         return f"{self.apartment.apartment_number}{self.apartment.building[0]} - {self.date}"
@@ -25,7 +25,6 @@ class Visit(models.Model):
 
 class Device(models.Model):
     apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE, related_name='devices')
-    visit = models.ForeignKey(Visit, on_delete=models.CASCADE, related_name='devices')
     device_type = models.CharField(max_length=255)
     model = models.CharField(max_length=255)
     built_in = models.CharField(max_length=255, null=True, blank=True, default=None)

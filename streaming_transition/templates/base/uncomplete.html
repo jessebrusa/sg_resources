@@ -28,7 +28,7 @@
                     Schedule
                 </button>
             </td>
-            <td><a href="#">Details</a></td>
+            <td><a href="{% url 'apartment' pk=apartment.id %}">Details</a></td>
             <td>
                 <button class="complete-button" data-apartment-id="{{ apartment.id }}">
                     Complete
@@ -61,7 +61,7 @@
                     Schedule
                 </button>
             </td>
-            <td><a href="#">Details</a></td>
+            <td><a href="{% url 'apartment' pk=apartment.id %}">Details</a></td>
             <td>
                 <button class="complete-button" data-apartment-id="{{ apartment.id }}">
                     Complete

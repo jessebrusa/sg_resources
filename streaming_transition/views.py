@@ -1,10 +1,12 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, ListView, UpdateView, DetailView
-from .models import Apartment
+from .models import Apartment, Visit
 
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.contrib import messages
+from django.utils import timezone
+
 
 from datetime import date
 
@@ -112,3 +114,23 @@ class NotCompleteApartmentCheckView(UpdateView):
         apartment.date_completed = None
         apartment.save()
         return JsonResponse({'status': 'success'})
+    
+
+class CompleteVisitCheckView(UpdateView):
+    model = Visit
+    fields = ['complete']
+
+    def post(self, request, *args, **kwargs):
+        visit = self.get_object()
+        visit.time_completed = timezone.now().time()
+
+        visit.save()
+        return JsonResponse({'status': 'success'})
+    
+
+class UpcomingVisitsView(ListView):
+    model = Visit
+    template_name = 'base/upcoming.html'
+
+    def get_queryset(self):
+        return Visit.objects.filter(date__gte=timezone.now().date(), time_completed__isnull=True).order_by('date')
