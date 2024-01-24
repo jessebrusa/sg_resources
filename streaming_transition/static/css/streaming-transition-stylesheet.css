@@ -10,6 +10,9 @@
 
 body {
     background-color: rgb(112, 18, 68);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .btnLink {
@@ -66,11 +69,11 @@ form {
 .header {
     background-color: whitesmoke;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 350px;
     width: 70%;
-    margin: 1.25rem;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
@@ -148,10 +151,83 @@ form {
     background-color: green;
 }
 
+.detailLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightcoral;
+    border: 2px solid darkmagenta;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: .75rem;
+    text-align: center;
+}
+
+.formContainer form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+.formContainer button {
+    width: 200px;
+    padding: 10px;
+}
+
+.rowItems {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.rowItems .item1 {
+    width: 350px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.rowItems .item2 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rowItems .item2 input {
+    width: 100%;
+}
+
+.rowItems .item2 textarea {
+    width: 100%;
+}
+
 table {
     background-color: whitesmoke;
     width: 90%;
     border-collapse: collapse;
+    margin-bottom: .5rem;
     margin-left: auto;
     margin-right: auto;
 }

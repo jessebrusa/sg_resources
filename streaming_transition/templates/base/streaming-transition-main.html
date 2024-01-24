@@ -9,9 +9,12 @@
     <title>Streaming Transition</title>
 </head>
 <body>
-    <a href="{% url 'streaming-transition-home' %}" class="btnLink btnBack">Back</a>
+
+    <a href="{% url 'streaming-transition-home' %}" class="btnLink btnBack">Home</a>
+
     {% block content %}
     {% endblock %}
+
     <script src="{% static 'js/streaming-transition.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+{% extends 'base/streaming-transition-main.html' %}
+
+{% block content %}
+
+    <div class="header">
+        <h1>Add a new device</h1>
+        <h2>Apartment: {{ apartment.apartment_number }}</h2>
+    </div>
+
+
+    <div class="formContainer">
+        <form method="post">
+            {% csrf_token %}
+            <div class="rowItems">
+                <div class="item1">{{ form.date.label_tag }}</div>
+                <div class="item2">{{ form.date }}</div>
+            </div>
+            <div class="rowItems">
+                <div class="item1">{{ form.time.label_tag }}</div>
+                <div class="item2">{{ form.time }}</div>
+            </div>
+            <div class="rowItems">
+                <div class="item1">{{ form.comment.label_tag }}</div>
+                <div class="item2">{{ form.comment }}</div>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    {% include 'base/footer.html' %}
+    
+{% endblock %}

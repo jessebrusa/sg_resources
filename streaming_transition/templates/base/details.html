@@ -33,6 +33,7 @@
     {% empty %}
     <li>No devices found.</li>
     {% endfor %}
+    <li class="detailLink"><a href="{% url 'device-form' apartment.id %}">+ Add Device</a></li>
 </ul>
 
 <div class="tableHeader">
@@ -47,15 +48,39 @@
             <p>Comments:</p>
             <p>{{ visit.comment }}</p>
         {% endif %}
-        {% if visit.complete %}
-            <p>Completed: {{ visit.complete }}</p>
+        {% if visit.time_completed %}
+            <p>Completed: {{ visit.time_completed }}</p>
         {% else %}
-            <p>Completed: False</p>
+            <div class="rowItems">
+                <p>Completed: False</p>
+                <button class="complete-button" data-visit-id="{{ visit.id }}">Mark Complete</button>
+            </div>
+            
         {% endif %}
     </li>
     {% empty %}
     <li>No visits found.</li>
     {% endfor %}
+    <li class="detailLink"><a href="{% url 'visit-form' apartment.id %}">+ Schedule Visit</a></li>
 </ul>
 <br>
+
+{% include 'base/footer.html' %}
+
+<script>
+    const csrf = "{{ csrf_token }}";
+
+    window.onload = function() {
+        var buttons = document.querySelectorAll('.complete-button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                updateData(button, 
+                '/streaming-transition/complete-visit-check/', 
+                csrf);
+            });
+        });
+    }
+</script>
+
 {% endblock %}
+

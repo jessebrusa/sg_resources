@@ -1,0 +1,40 @@
+{% extends 'base/streaming-transition-main.html' %}
+
+{% block content %}
+
+    <div class="header">
+        <h1>Add a new device</h1>
+        <h2>Apartment: {{ apartment.apartment_number }}</h2>
+    </div>
+
+
+    <div class="formContainer">
+        <form method="post">
+            {% csrf_token %}
+            <div class="rowItems">
+                <div class="item1">{{ form.device_type.label_tag }}</div>
+                <div class="item2">{{ form.device_type }}</div>
+            </div>
+            <div class="rowItems">
+                <div class="item1">{{ form.model.label_tag }}</div>
+                <div class="item2">{{ form.model }}</div>
+            </div>
+            <div class="rowItems">
+                <div class="item1">{{ form.built_in.label_tag }}</div>
+                <div class="item2">{{ form.built_in }}</div>
+            </div>
+            <div class="rowItems">
+                <div class="item1">{{ form.smart_device.label_tag }}</div>
+                <div class="item2">{{ form.smart_device }}</div>
+            </div>
+            <div class="rowItems">
+                <div class="item1">{{ form.recommendation.label_tag }}</div>
+                <div class="item2">{{ form.recommendation }}</div>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    {% include 'base/footer.html' %}
+    
+{% endblock %}

@@ -17,7 +17,7 @@ class Visit(models.Model):
     time = models.TimeField()
     technician = models.CharField(max_length=255)
     comment = models.TextField(null=True, blank=True)
-    time_completed = models.TimeField(max_length=255, null=True, blank=True, default=None)
+    time_completed = models.DateTimeField(null=True, blank=True, default=None)
 
     def __str__(self):
         return f"{self.apartment.apartment_number}{self.apartment.building[0]} - {self.date}"
