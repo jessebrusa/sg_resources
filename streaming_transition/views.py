@@ -95,7 +95,7 @@ class CompleteView(LoginRequiredMixin, ListView):
         return context
 
 
-class UpcomingVisitsView(ListView):
+class UpcomingVisitsView(LoginRequiredMixin, ListView):
     model = Visit
     template_name = 'base/upcoming.html'
 
@@ -103,7 +103,7 @@ class UpcomingVisitsView(ListView):
         return Visit.objects.filter(date__gte=timezone.now().date(), time_completed__isnull=True).order_by('date')
     
 
-class DeviceCreateView(CreateView):
+class DeviceCreateView(LoginRequiredMixin, CreateView):
     model = Device
     form_class = DeviceForm
     template_name = 'base/device-form.html'
@@ -122,7 +122,7 @@ class DeviceCreateView(CreateView):
         return context
 
 
-class VisitCreateView(CreateView):
+class VisitCreateView(LoginRequiredMixin, CreateView):
     model = Visit
     form_class = VisitForm
     template_name = 'base/visit-form.html'
@@ -142,7 +142,7 @@ class VisitCreateView(CreateView):
         return context
 
 
-class VisitHomeCreateView(CreateView):
+class VisitHomeCreateView(LoginRequiredMixin, CreateView):
     model = Visit
     form_class = VisitHomeForm
     template_name = 'base/visit-home-form.html'
@@ -160,7 +160,7 @@ class VisitHomeCreateView(CreateView):
 
 #####################################################################################
 
-class CompleteApartmentCheckView(UpdateView):
+class CompleteApartmentCheckView(LoginRequiredMixin, UpdateView):
     model = Apartment
     fields = ['complete']
 
@@ -172,7 +172,7 @@ class CompleteApartmentCheckView(UpdateView):
         return JsonResponse({'status': 'success'})
     
 
-class NotCompleteApartmentCheckView(UpdateView):
+class NotCompleteApartmentCheckView(LoginRequiredMixin, UpdateView):
     model = Apartment
     fields = ['complete']
 
@@ -184,7 +184,7 @@ class NotCompleteApartmentCheckView(UpdateView):
         return JsonResponse({'status': 'success'})
     
 
-class CompleteVisitCheckView(UpdateView):
+class CompleteVisitCheckView(LoginRequiredMixin, UpdateView):
     model = Visit
     fields = ['complete']
 

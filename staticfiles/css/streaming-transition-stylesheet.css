@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(112, 18, 68);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.btnLink {
+    background-color: lightcoral;
+    border: 2px solid darkmagenta;
+    width: 275px;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    margin: 1rem;
+    box-shadow: -10px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.15s ease-in-out;
+}
+
+.btnLink:hover {
+    cursor: pointer;
+    transform: translate(10px, -5px) scale(1.1);
+    box-shadow: -25px 10px 25px 0px rgba(0, 0, 0, 0.6);
+}
+
+.btnLink:active {
+    transform: scale(1.05);
+}
+
+.btnBack {
+    margin-top: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.detailContainer {
+    width: 50%;
+    min-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: whitesmoke;
+    border: 2px solid darkmagenta;
+}
+
+.detailContainer li {
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    gap: .5rem;
+}
+
+.header {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 350px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 5px solid darkmagenta;
+}
+
+.header h1 {
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.linkContainer {
+    width: 80%;
+    min-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkContainer div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.linkContainer div a {
+    text-decoration: none;
+    color: black;
+}
+
+.dashboardContainer {
+    background-color: beige;
+    border: 10px solid darkmagenta;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 1rem;
+    gap: .5rem;
+    min-width: 300px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dashboardContainer h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.dashboardContainer p {
+    text-align: center;
+}
+
+.dashboardContainer .progressBar {
+    width: 50%;
+    border: 5px solid brown;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboardContainer .progressBar .progressFill {
+    height: 100%;
+    background-color: green;
+}
+
+.detailLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightcoral;
+    border: 2px solid darkmagenta;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: .75rem;
+    text-align: center;
+}
+
+.formContainer form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+.formContainer button {
+    width: 200px;
+    padding: 10px;
+}
+
+.rowItems {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.rowItems .item1 {
+    width: 350px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.rowItems .item2 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rowItems .item2 input {
+    width: 100%;
+}
+
+.rowItems .item2 textarea {
+    width: 100%;
+}
+
+table {
+    background-color: whitesmoke;
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table td, table th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
+table td:first-child, table th:first-child {
+    width: 100px;
+}
+
+.tableHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableHeader h2 {
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+    color: whitesmoke;
+}
