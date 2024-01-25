@@ -23,7 +23,7 @@ class VisitForm(forms.ModelForm):
 class VisitHomeForm(forms.ModelForm):
     class Meta:
         model = Visit
-        fields = ['apartment','date', 'time', 'comment']
+        fields = ['apartment','date', 'time','comment']
         widgets = {
             'date': DateInput(attrs={'type': 'date'}),
             'time': TimeInput(attrs={'type': 'time'}),

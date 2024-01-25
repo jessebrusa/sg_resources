@@ -24,9 +24,9 @@
         <tr>
             <td>{{ apartment.apartment_number }}</td>
             <td>
-                <button class="schedule-button" data-apartment-id="{{ apartment.id }}">
+                <a href="{% url 'visit-form' pk=apartment.id %}">
                     Schedule
-                </button>
+                </a>
             </td>
             <td><a href="{% url 'apartment' pk=apartment.id %}">Details</a></td>
             <td>
@@ -57,9 +57,9 @@
         <tr>
             <td>{{ apartment.apartment_number }}</td>
             <td>
-                <button class="schedule-button" data-apartment-id="{{ apartment.id }}">
+                <a href="{% url 'visit-form' pk=apartment.id %}">
                     Schedule
-                </button>
+                </a>
             </td>
             <td><a href="{% url 'apartment' pk=apartment.id %}">Details</a></td>
             <td>

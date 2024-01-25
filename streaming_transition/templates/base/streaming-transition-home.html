@@ -7,9 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/streaming-transition-stylesheet.css' %}">
     <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <style>
+        .dashboardContainer {
+            margin-top: -50px;
+        }
+
+        .headerContainer a {
+            margin-left: auto;
+        }
+    </style>
     <title>Streaming Transition</title>
 </head>
 <body>
+
+    <div class="headerContainer">
+        <a href="{% url 'logout' %}" class="btnLink btnBack">Logout</a>
+    </div>
 
     <div class="dashboardContainer">
         <h1>Welcome! {{ username }}</h1>

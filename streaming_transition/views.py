@@ -130,7 +130,6 @@ class VisitCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.created_by = self.request.user 
         form.instance.apartment = get_object_or_404(Apartment, pk=self.kwargs['pk'])
-        form.instance.technician = f"{self.request.user.first_name} {self.request.user.last_name}"
         return super().form_valid(form)
     
     def get_success_url(self):
@@ -150,7 +149,6 @@ class VisitHomeCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.created_by = self.request.user 
         form.instance.apartment = form.cleaned_data.get('apartment')
-        form.instance.technician = f"{self.request.user.first_name} {self.request.user.last_name}"
         return super().form_valid(form)
     
     def get_success_url(self):
@@ -191,6 +189,7 @@ class CompleteVisitCheckView(LoginRequiredMixin, UpdateView):
     def post(self, request, *args, **kwargs):
         visit = self.get_object()
         visit.time_completed = timezone.now()
+        visit.technician = f"{self.request.user.first_name} {self.request.user.last_name}"
 
         visit.save()
         return JsonResponse({'status': 'success'})

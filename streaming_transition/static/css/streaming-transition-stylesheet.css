@@ -192,6 +192,15 @@ footer p {
     padding: 10px;
 }
 
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
 .rowItems {
     display: flex;
     justify-content: flex-start;
@@ -253,4 +262,12 @@ table td:first-child, table th:first-child {
     padding: 10px;
     text-align: center;
     color: whitesmoke;
+}
+
+
+
+@media (max-width: 900px) {
+    * {
+        font-size: 18px;
+    }
 }

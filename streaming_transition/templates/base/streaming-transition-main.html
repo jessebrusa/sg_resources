@@ -11,7 +11,11 @@
 </head>
 <body>
 
-    <a href="{% url 'streaming-transition-home' %}" class="btnLink btnBack">Home</a>
+    <div class="headerContainer">
+        <a href="{% url 'streaming-transition-home' %}" class="btnLink btnBack">Home</a>
+        <a href="{% url 'logout' %}" class="btnLink btnBack">Logout</a>
+    </div>
+    
 
     {% block content %}
     {% endblock %}
